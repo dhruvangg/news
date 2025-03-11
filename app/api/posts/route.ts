@@ -37,14 +37,16 @@ export async function POST(request: Request) {
             try {
                 const data = await prisma.post.create({ data: validatedData });
                 return NextResponse.json({ message: 'Post Created', data });
-            } catch (error: any) {
-                console.log(error.message);
-
-                return NextResponse.json({ error: error.message }, { status: 400 });
+            } catch (error: unknown) {
+                if (error instanceof Error) {
+                    return NextResponse.json({ error: error.message }, { status: 400 });
+                }
             }
         }
         return NextResponse.json({ message: 'Invalid data' }, { status: 400 });
-    } catch (error: any) {
-        return NextResponse.json({ error: error.message }, { status: 400 });
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            return NextResponse.json({ error: error.message }, { status: 400 });
+        }
     }
 }

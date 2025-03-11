@@ -75,7 +75,8 @@ const article = {
   tags: ["Climate Change", "Global Summit", "Carbon Emissions", "Environment"],
 }
 
-export default function ArticlePage({ params }: { params: { slug: string } }) {
+export default function ArticlePage() {
+  // ArticlePage({ params }: { params: { slug: string } }) {
   // In a real app, you would fetch the article data based on the slug
   // const { slug } = params;
   // const article = await getArticleBySlug(slug);
@@ -94,30 +95,31 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             </div>
           </div>
           <nav className="flex gap-6 border-b pb-2">
-            <a href="/" className="text-sm font-medium text-muted-foreground">
+            
+            <Link href="/" className="text-sm font-medium text-muted-foreground">
               Home
-            </a>
-            <a href="#" className="text-sm font-medium text-primary">
+            </Link>
+            <Link href="#" className="text-sm font-medium text-primary">
               World
-            </a>
-            <a href="#" className="text-sm font-medium text-muted-foreground">
+            </Link>
+            <Link href="#" className="text-sm font-medium text-muted-foreground">
               Politics
-            </a>
-            <a href="#" className="text-sm font-medium text-muted-foreground">
+            </Link>
+            <Link href="#" className="text-sm font-medium text-muted-foreground">
               Business
-            </a>
-            <a href="#" className="text-sm font-medium text-muted-foreground">
+            </Link>
+            <Link href="#" className="text-sm font-medium text-muted-foreground">
               Technology
-            </a>
-            <a href="#" className="text-sm font-medium text-muted-foreground">
+            </Link>
+            <Link href="#" className="text-sm font-medium text-muted-foreground">
               Science
-            </a>
-            <a href="#" className="text-sm font-medium text-muted-foreground">
+            </Link>
+            <Link href="#" className="text-sm font-medium text-muted-foreground">
               Health
-            </a>
-            <a href="#" className="text-sm font-medium text-muted-foreground">
+            </Link>
+            <Link href="#" className="text-sm font-medium text-muted-foreground">
               Sports
-            </a>
+            </Link>
           </nav>
         </header>
 

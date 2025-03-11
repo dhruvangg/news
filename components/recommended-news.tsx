@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Clock, MessageSquare, ThumbsUp } from "lucide-react"
+import { Clock, Loader, MessageSquare, ThumbsUp } from "lucide-react"
 import { useEffect, useState } from "react"
 
 // Sample data for recommended news
@@ -117,6 +117,12 @@ export function RecommendedNews() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {isLoading && (
+        <div className="flex items-center justify-center">
+          <Loader />
+        </div>
+      )}
+      {error && <p>{error}</p>}
       {recommendedNews.map((news) => (
         <Card key={news.id} className="overflow-hidden hover:shadow-lg transition-shadow">
           <div className="relative h-48">
@@ -135,14 +141,14 @@ export function RecommendedNews() {
                   <Clock className="h-3 w-3" />
                   {news.publishedAt}
                 </span>
-                {/* <span className="flex items-center gap-1">
+                <span className="flex items-center gap-1">
                   <MessageSquare className="h-3 w-3" />
-                  {news.comments || 10}
+                  {10}
                 </span>
                 <span className="flex items-center gap-1">
                   <ThumbsUp className="h-3 w-3" />
-                  {news.likes || 10}
-                </span> */}
+                  {10}
+                </span>
               </div>
             </div>
           </CardContent>
@@ -151,4 +157,3 @@ export function RecommendedNews() {
     </div>
   )
 }
-

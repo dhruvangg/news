@@ -32,7 +32,8 @@ const relatedArticles = [
   },
 ]
 
-export function RelatedArticles({ currentArticleId }: { currentArticleId: number }) {
+export function RelatedArticles() {
+  // RelatedArticles({ currentArticleId }: { currentArticleId: number }) 
   // In a real app, you would filter out the current article and fetch related ones
   // const filteredArticles = await getRelatedArticles(currentArticleId, category, tags);
 

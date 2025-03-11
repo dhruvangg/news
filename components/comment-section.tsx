@@ -101,7 +101,8 @@ type ReplyType = {
   timestamp: string
 }
 
-export function CommentSection({ articleId }: { articleId: number }) {
+export function CommentSection() {
+  // CommentSection({ articleId }: { articleId: number })
   const [comments, setComments] = useState<Comment[]>(sampleComments)
   const [newComment, setNewComment] = useState("")
   const [replyingTo, setReplyingTo] = useState<number | null>(null)

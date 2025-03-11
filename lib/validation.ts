@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 class Validation {
-    static validate(schema: z.ZodSchema, data: any) {
+    static validate(schema: z.ZodSchema, data: unknown) {
         const result = schema.safeParse(data);
         if (!result.success) {
             throw new Error(result.error.message);
@@ -11,7 +11,7 @@ class Validation {
 }
 
 class UserValidation extends Validation {
-    static validateUser(data: any) {
+    static validateUser(data: unknown) {
         const schema = z.object({
             email: z.string().email(),
             password: z.string().min(6).max(20)
@@ -21,7 +21,7 @@ class UserValidation extends Validation {
 }
 
 class PostValidation extends Validation {
-    static validatePost(data: any) {
+    static validatePost(data: unknown) {
         const schema = z.object({
             title: z.string().min(6).max(20),
             slug: z.string().min(6).max(20),

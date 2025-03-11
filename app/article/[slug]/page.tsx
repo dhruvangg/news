@@ -207,13 +207,15 @@ export default function ArticlePage() {
             </div>
           </div>
 
-          <CommentSection articleId={article.id} />
+          <CommentSection />  
+          {/* // articleId={article.id}  */}
 
           <Separator className="my-12" />
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-6">Related Articles</h2>
-            <RelatedArticles currentArticleId={article.id} />
+            <RelatedArticles />
+            {/* currentArticleId={article.id}  */}
           </section>
         </article>
       </div>
